@@ -1,0 +1,18 @@
+# Node / Angular
+node_modules/
+/frontend/dist/
+/frontend/tmp/
+/frontend/out-tsc/
+/frontend/coverage/
+npm-debug.log*
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.env
+
+# Editors
+.idea/
+.vscode/
+.DS_Store
