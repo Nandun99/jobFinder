@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 import { AlertComponent } from './_components';
 import { HomeComponent } from './home';
 import { ImageViewComponent } from './_components/image-view/image-view.component';
+import { UserDetailsComponent } from './_components/user-details/user-details.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -32,6 +33,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     AlertComponent,
     HomeComponent,
     ImageViewComponent,
+    UserDetailsComponent,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
