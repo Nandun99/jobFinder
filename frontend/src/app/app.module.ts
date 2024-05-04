@@ -2,14 +2,19 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { MatCardModule } from '@angular/material/card';
 // used to create fake backend
 import { fakeBackendProvider } from './_helpers';
 
-// import { AppRoutingModule } from './app-routing.module';
+// import { FlexLayoutModule } from '@angular/flex-layout';
+import { AppRoutingModule } from './app-routing.module';
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
 import { AppComponent } from './app.component';
 import { AlertComponent } from './_components';
 import { HomeComponent } from './home';
+import { ImageViewComponent } from './_components/image-view/image-view.component';
+import { UserDetailsComponent } from './_components/user-details/user-details.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
@@ -18,11 +23,17 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
+    MatCardModule,
+    FlexLayoutModule,
+
+    BrowserAnimationsModule,
   ],
   declarations: [
     AppComponent,
     AlertComponent,
     HomeComponent,
+    ImageViewComponent,
+    UserDetailsComponent,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
