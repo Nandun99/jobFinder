@@ -172,6 +172,30 @@ def dict_helper(objlist):
     return result2
 
 
+@app.route("/login" ,methods=["POST" , "GET","OPTIONS"])
+def login():
+    if request.method == "POST":     
+        data = request.json
+        
+        username = data.get("username")
+        password = data.get("password")
+
+        student = Student.query.filter_by(username=username).first()
+   
+      
+        
+        if check_password_hash(password,student.password):
+               print(password)
+
+               dictStudent =  dict_helper(student)
+               print(dictStudent)
+               print(jsonify(dictStudent))
+               return jsonify(dictStudent)
+          
+
+    return "fail"
+
+
 # @app.route("/image-upload" ,methods=["POST" , "GET","OPTIONS"])
 # def imageUpload():
 
